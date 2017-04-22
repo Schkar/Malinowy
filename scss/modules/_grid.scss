@@ -1,0 +1,61 @@
+$gutter: 20px;
+$columnNo: 12;
+
+*{
+  box-sizing: border-box;
+}
+
+.grid_container{
+  width: 100%;
+  max-width: 1600px;
+  @media (min-width: 1600px){
+    margin: 0 auto;
+  }
+}
+
+.row::before,
+.row::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"]{
+  float: left;
+  padding: 0 $gutter;
+  min-height: 1px;
+  &.collapsed{
+    padding: 0;
+  }
+}
+
+@for $i from 1 through 12{
+  .col-xs-#{$i}{
+      width: 100/$columnNo * $i + %;
+  }
+}
+
+
+@include phone{;
+  @for $i from 1 through 12{
+    .col-s-#{$i}{
+      width: 100/$columnNo * $i + %;
+    }
+  }
+}
+
+@include tablet{;
+  @for $i from 1 through 12{
+    .col-m-#{$i}{
+      width: 100/$columnNo * $i + %;
+    }
+  }
+}
+
+@include desktop{;
+  @for $i from 1 through 12{
+    .col-l-#{$i}{
+      width: 100/$columnNo * $i + %;
+    }
+  }
+}

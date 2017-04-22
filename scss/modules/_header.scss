@@ -1,0 +1,101 @@
+.header{
+  background-color: #f1f1f1;
+  border-bottom: 1px solid black;
+  //height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*logo styling*/
+  .logo_container{
+    text-align: center;
+    vertical-align: middle;
+    //margin: auto;
+    .logo{
+      width: 120px;
+      height: 50px;
+      img{
+        margin: 0.9375rem 0 0;
+        width: 120px;
+        height: 50px;
+      }
+    }
+  }
+  /*menu*/
+  .menu_container{
+    font-size: 10px;
+    @include tablet{
+      font-size: 1em;
+    }
+    .menu_list{
+      text-align: center;
+      margin: 0 auto;
+      height: 100%;
+      li{
+        padding: 5px;
+        display: inline-block;
+        list-style: none;
+        position: relative;
+        vertical-align: middle;
+        line-height: 80px;
+        &:active{
+          border-bottom: 2px solid #e50a34;
+        }
+        &:hover{
+          ul{
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 2s;
+            padding: 0;
+            &::after{
+              top: -10px;
+              transition: top 0.5s;
+              z-index: -1;
+            }
+          }
+        }
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        ul{
+          visibility: hidden;
+          opacity: 0;
+          padding: 0;
+          background-color: #e50a34;
+          position: absolute;
+          top: 85px;
+          left: -30px;
+          white-space: nowrap;
+          line-height: 30px;
+          &::after{
+            content: "";
+            position: absolute;
+            left: 45px;
+            top: 20px;
+            transform: rotate(-45deg);
+            border-right: 25px solid #e50a34;
+            border-bottom: 25px solid transparent;
+          }
+          &:hover{
+            visibility: visible;
+            opacity: 1;
+          }
+          li{
+            display: inline;
+            line-height: 30px;
+            height: 100%;
+            padding: 0;
+            &:hover{
+              background-color: darken(#e50a34, 15%);
+            }
+            a{
+              color: white;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
