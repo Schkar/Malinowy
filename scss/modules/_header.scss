@@ -1,21 +1,42 @@
+.grey_shadow{
+  visibility: hidden;
+  opacity: 0;
+  width: 100vw;
+  height: 105vh;
+  top: 85px;
+  left: 0px;
+  background: black;
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+.visible{
+  visibility: visible;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  @include tablet{
+    display: none;
+  }
+}
+
+
 .header{
   background-color: #f1f1f1;
   border-bottom: 1px solid black;
-  //height: auto;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 999;
   /*logo styling*/
   .logo_container{
     text-align: center;
-    vertical-align: middle;
-    //margin: auto;
     .logo{
       width: 120px;
       height: 50px;
       img{
-        margin: 0.9375rem 0 0;
+        margin: 0.9375rem 0;
         width: 120px;
         height: 50px;
       }
@@ -24,15 +45,78 @@
   /*menu*/
   .menu_container{
     font-size: 10px;
+    position: relative;
+    text-align: center;
     @include tablet{
       font-size: 1em;
     }
+    .nav_button{
+      display: block;
+      @include phone{
+        display: none;
+      }
+      height: 20px;
+      width: 30px;
+      position: absolute;
+      top: 25px;
+      right: 3rem;
+      &::after, &::before{
+        content: "";
+        width: 100%;
+        position: absolute;
+      }
+      &::after{
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        height: 16px;
+        top: 3px;
+        left: 0px;
+      }
+      &::before{
+        background-color: black;
+        height: 2px;
+        top: 12px;
+        left: 0px;
+      }
+      &.clicked{
+        &::before{
+          transform: rotate(45deg);
+          transform-origin: center;
+        }
+        &::after{
+          transform: rotate(-45deg);
+          transform-origin: center;
+          border: 0px;
+          background-color: black;
+          height: 2px;
+          top: 12px;
+          left: 0px;
+        }
+      }
+    }
     .menu_list{
+      display: none;
       text-align: center;
       margin: 0 auto;
       height: 100%;
+      left: -500px;
+      z-index: 99;
+      @include phone{
+        display: inline-block;
+        padding: 0;
+        left: 0px;
+      }
+      @include tablet{
+        font-size: 0.7em;
+      }
+      @include desktop{
+        font-size: 1em;
+      }
       li{
         padding: 5px;
+        @include desktop{
+          padding: 5px 15px;
+        }
         display: inline-block;
         list-style: none;
         position: relative;
@@ -43,14 +127,18 @@
         }
         &:hover{
           ul{
-            visibility: visible;
-            opacity: 1;
-            transition: opacity 2s;
-            padding: 0;
+            @include phone{
+              visibility: visible;
+              opacity: 1;
+              transition: opacity 2s;
+              padding: 0;
+            }
             &::after{
-              top: -10px;
-              transition: top 0.5s;
-              z-index: -1;
+              @include phone{
+                top: -10px;
+                transition: top 0.5s;
+                z-index: -1;
+              }
             }
           }
         }
@@ -78,8 +166,10 @@
             border-bottom: 25px solid transparent;
           }
           &:hover{
-            visibility: visible;
-            opacity: 1;
+            @include desktop{
+              visibility: visible;
+              opacity: 1;
+            }
           }
           li{
             display: inline;
@@ -92,6 +182,92 @@
             a{
               color: white;
               line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+    .active{
+      display: block;
+      @include phone{
+        display: none;
+      }
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      margin-top: 85px;
+      left: -40px;
+      list-style-image: none;
+      animation-name: menu_slide;
+      animation-duration: 0.30s;
+      background-color: white;
+      font-size: 0.9em;
+      li{
+        border-bottom: 1px solid grey;
+        display: block;
+        padding: 0 20px;
+        line-height: 3em;
+        font-size: 1.5em;
+        width: 260px;
+        position: relative;
+        text-align: left;
+        &:hover ul{
+          display: none;
+        }
+      }
+      .has_children{
+        > a{
+          &::before, &::after{
+            box-sizing: border-box;
+            content: " ";
+            position: absolute;
+            width: 15px;
+            height: 1px;
+            background-color: grey;
+            top: 50%;
+            left: 90%;
+          }
+          &::before{
+            transform: rotate(90deg);
+            transform-origin: center;
+          }
+        }
+        &.open{
+          a{
+            &::before{
+              display: none;
+            }
+            &::after{
+              top: 20px;
+            }
+          }
+          .has_children_child{
+            position: inherit;
+            top: 0;
+            left: 0;
+            display: block;
+            background-color: darken(#e50a34, 15%);
+            visibility: visible;
+            opacity: 1;
+            &::after{
+              display: none;
+            }
+            &.open{
+              top: 0px;
+              transition: top 1s ease;
+            }
+            li{
+              display: block;
+              opacity: 1;
+              visibility: visible;
+              position: inherit;
+              top: 0;
+              left: 0;
+              width: 100%;
+              background-color: #E50A34;
+              font-size: 0.9em;
+              padding: 7px 5px;
+              border-bottom: 1px solid grey;
             }
           }
         }
