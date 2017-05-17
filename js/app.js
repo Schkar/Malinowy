@@ -17,8 +17,11 @@ menuList.addEventListener("click", function(e) {
   if (e.target.classList[0].indexOf("menu_list") > 0){
     return;
   }
+  e.target.children[1].classList.toggle("open");
   e.target.classList.toggle("open");
   e.stopImmediatePropagation();
 });
+
+//slider js
 
  });

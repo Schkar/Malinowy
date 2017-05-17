@@ -7,3 +7,8 @@
   from {opacity: 0;}
   to {opacity: 0.7;}
 }
+
+@keyframes slide-down {
+  from {margin-top: -100px;}
+  to {margin-top: 0;}
+}
