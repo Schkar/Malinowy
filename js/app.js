@@ -24,4 +24,17 @@ menuList.addEventListener("click", function(e) {
 
 //slider js
 
+var slide1 = document.querySelector('.slide_1');
+var slide2 = document.querySelector('.slide_2');
+
+function changeSlide() {
+    slide1.classList.toggle("active");
+    slide2.classList.toggle("active");
+}
+
+var changeSlideInterval;
+changeSlideInterval = setInterval(function() {
+  changeSlide();
+}, 5000);
+
  });
