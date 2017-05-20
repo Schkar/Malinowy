@@ -1,7 +1,6 @@
 //main slider container (MAIN!!!)
 .slider{
   position: relative;
-  top: 10px;
   width: 100vw;
   height: auto;
   // every slide container (there are 2)
@@ -10,8 +9,11 @@
     position: absolute;
     top: 0;
     width: 100%;
+    overflow: hidden;
     img{
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
   }
   .slide_1{
@@ -22,14 +24,14 @@
       transition: left 0.5s ease;
     }
     //slide 1 text
-    .on_slide_1_text{
+    .on_slide1_text{
       position: absolute;
-      top: 50px;
+      top: 40%;
       left: 5%;
       text-transform: uppercase;
       color: white;
       font-size: 0.7em;
-      z-index: 1000;
+      z-index: 700;
       @include phone{
         font-size: 1.5em;
       }

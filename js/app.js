@@ -19,22 +19,33 @@ menuList.addEventListener("click", function(e) {
   }
   e.target.children[1].classList.toggle("open");
   e.target.classList.toggle("open");
-  e.stopImmediatePropagation();
+  //e.stopImmediatePropagation();
 });
 
 //slider js
-
-var slide1 = document.querySelector('.slide_1');
-var slide2 = document.querySelector('.slide_2');
+var bulletPoints = document.querySelectorAll(".bullet_point");
+var slides = document.querySelectorAll("[class*='slide_']");
 
 function changeSlide() {
-    slide1.classList.toggle("active");
-    slide2.classList.toggle("active");
+  for (var i = 0; i < 2; i++) {
+    slides[i].classList.toggle("active");
+    bulletPoints[i].classList.toggle("bp_active");
+  }
 }
 
-var changeSlideInterval;
-changeSlideInterval = setInterval(function() {
+var changeSlideInterval = setInterval(changeSlide, 5000);
+
+// slider nav
+
+var sliderNav = document.querySelector(".slider_navigation");
+
+sliderNav.addEventListener("click", function (e) {
+  if (e.target.classList.contains("bp_active") || !e.target.classList.contains("bullet_point")) {
+    return;
+  }
+  clearInterval(changeSlideInterval);
   changeSlide();
-}, 5000);
+  changeSlideInterval = setInterval(changeSlide, 5000);
+});
 
  });

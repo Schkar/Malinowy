@@ -1,0 +1,14 @@
+.boxes_container{
+  position: relative;
+  top:750px;
+
+
+
+[class*="box_container_"]{
+  padding: 1px;
+  border: 2px solid lightgrey;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+}
+}
