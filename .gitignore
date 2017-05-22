@@ -38,4 +38,4 @@ jspm_packages
 
 # Css files
 css
-*.css
+.css
