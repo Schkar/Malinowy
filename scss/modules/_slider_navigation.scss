@@ -3,16 +3,10 @@
   height: 100%;
   .slider_navigation{
     position: absolute;
-    bottom: 10px;
-    // @media (min-width: 480px) and (max-width: 639px){
-    //   top: 50vh;
-    // }
-    // @include phone{
-    //   top: 60vh;
-    // }
-    // @include tablet{
-    //   top: 70vh;
-    // }
+    bottom: 5px;
+    @include phone{
+      bottom: 10px;
+    }
     left: 0;
     text-align: center;
     .bullet_point{

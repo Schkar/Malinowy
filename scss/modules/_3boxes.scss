@@ -1,14 +1,23 @@
 .boxes_container{
   position: relative;
-  top:750px;
-
-
-
-[class*="box_container_"]{
-  padding: 1px;
-  border: 2px solid lightgrey;
-  box-sizing: border-box;
-  display: inline-block;
-  text-align: center;
-}
+  .box_container{
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    [class*="box_inner_"]{
+      border: 2px solid lightgrey;
+      box-sizing: border-box;
+      padding: 5px;
+      @include phone{
+        min-height: 660px;
+      }
+      @include tablet{
+        min-height: 560px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
