@@ -1,4 +1,5 @@
 //main slider container (MAIN!!!)
+<<<<<<< HEAD
   .slider{
     position: relative;
     width: 100vw;
@@ -17,6 +18,25 @@
         max-height: 100%;
         object-fit: contain;
       }
+=======
+.slider{
+  position: relative;
+  width: 100vw;
+  height: 506px;
+  overflow: hidden;
+  // every slide container (there are 2)
+  [class*="slide_"]{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      overflow: hidden;
+>>>>>>> 1b6c11b4ec0d773f5f55be276d0600123596e275
     }
     .slide_1{
       left: -100%;
