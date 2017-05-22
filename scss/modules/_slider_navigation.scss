@@ -1,40 +1,44 @@
-.slider_navigation{
-  position: absolute;
-  top: 100px;
-  @media (min-width: 480px) and (max-width: 639px){
-    top: 50vh;
-  }
-  @include phone{
-    top: 60vh;
-  }
-  @include tablet{
-    top: 70vh;
-  }
-  left: 0;
-  text-align: center;
-  .bullet_point{
-    background-color: white;
-    border: 1px solid red;
-    @include tablet{
-      border: 2px solid red;
-    }
-    border-radius: 50%;
-    height: 10px;
-    width: 10px;
-    margin: 0 4px;
-    z-index: 999;
-    @include phone{
-      height: 20px;
-      width: 20px;
-    }
-    display: inline-block;
-    &.bp_active{
-      transition: background-color 0.5s, border 0.5s;
-      background-color: red;
-      border: 1px solid white;
-        @include tablet{
-          border: 2px solid white;
-        }
+.slider_wrapper{
+  position: relative;
+  height: 100%;
+  .slider_navigation{
+    position: absolute;
+    bottom: 10px;
+    // @media (min-width: 480px) and (max-width: 639px){
+    //   top: 50vh;
+    // }
+    // @include phone{
+    //   top: 60vh;
+    // }
+    // @include tablet{
+    //   top: 70vh;
+    // }
+    left: 0;
+    text-align: center;
+    .bullet_point{
+      background-color: white;
+      border: 1px solid red;
+      @include tablet{
+        border: 2px solid red;
+      }
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+      z-index: 999;
+      @include phone{
+        height: 20px;
+        width: 20px;
+      }
+      display: inline-block;
+      &.bp_active{
+        transition: background-color 0.5s, border 0.5s;
+        background-color: red;
+        border: 1px solid white;
+          @include tablet{
+            border: 2px solid white;
+          }
+      }
     }
   }
 }
