@@ -1,4 +1,89 @@
-.table_main{
-    font-size: 2em;
-    color: black;
+.table_background{
+    background-color: #F1F1F1;
+    .table_container{
+        text-align: center;
+        margin: 0 auto;
+        display: table;
+        h2{
+            font-size: 2em;
+            color: black;
+        }
+        .table_main{
+            text-align: center;
+            border-collapse: collapse;
+            box-sizing: border-box;
+            border-spacing: 0px;
+            margin: 0 auto;
+            thead{
+                th{
+                    background-color: #e50a34;
+                    color: white;
+                    padding: 10px;
+                    @include phone{
+                        padding: 20px;
+                    }
+                    font-weight: normal;
+                    &:first-child{
+                        display: none;
+                        @include phone{
+                            display: table-cell;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            tr{
+                td{
+                    padding: 10px;
+                    @include phone{
+                        padding: 20px;
+                    }
+                    border-bottom: 1px solid darkgrey;
+                    &:first-child{
+                        display: none;
+                        @include phone{
+                            display: block;
+                        }
+                    }
+                }
+                .mg{
+                    background-color: #CBCBCB;
+                }
+                &:hover{
+                    td:not(.mg){
+                        background-color: darkgrey;
+                    }
+                }
+            }
+            .size_row{
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            .price_row{
+                color: #e50a34;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+            .mobile_table_tr{
+                @include phone{
+                    display: none;
+                }
+                td{
+                    display: table-cell !important;
+                    @include phone{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .table_black_text{
+            color: black;
+        }
+        .table_red_text{
+            color: #e50a34;
+        }
+        .house_choose_link{
+            text-decoration: none;
+        }
+    }
 }
