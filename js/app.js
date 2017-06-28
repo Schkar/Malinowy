@@ -68,4 +68,12 @@ document.addEventListener("DOMContentLoaded",function(){
     email.addEventListener("blur", checkEmail);
 
   //form validation end
+
+  //prevent default for sumbit button
+    var subButton = document.querySelector(".submit_button");
+    subButton.addEventListener("click",function(e){
+      e.preventDefault()
+    })
+
+  //prevent default for sumbit button end
 });
