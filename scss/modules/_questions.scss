@@ -1,0 +1,40 @@
+.question_container{
+    text-align: center;
+    background-color: #F1F1F1;
+    .question_title{
+        font-size: 1.3em;
+        @include phone{
+            font-size: 1.5em;
+        }
+    }
+    .question_phone{
+        margin: 0;
+        font-size: 1em;
+        @include phone{
+            font-size: 1.2em;
+        }
+        .question_phone_icon{
+        display: inline-block;
+        margin: 0 5px;
+    }
+        .question_text_red{
+            color: #e50a34;
+            text-decoration: none;
+        }
+    }
+    .question_mail{
+        font-size: 1em;
+        @include phone{
+            font-size: 1.2em;
+        }
+        display: inline-block;
+        .question_text_red{
+            color: #e50a34;
+            text-decoration: none;
+        }
+        .question_mail_icon{
+            display: inline-block;
+            margin: 0 5px;
+        }
+    }
+}

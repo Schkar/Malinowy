@@ -1,0 +1,38 @@
+.footer_container{
+    background-color: #3A3636;
+    font-size: 0.7em;
+    @include phone{
+        font-size: 0.9em;
+    }
+    @include desktop{
+        font-size: 1em;
+    }
+    .footer_left{
+        padding: 15px 30px;
+        @include desktop{
+            padding: 15px 200px;
+            text-align: left;
+        }
+        color: white;
+        text-align: center;
+    }
+    .footer_right{
+        color: white;
+        padding: 15px 30px;
+        @include desktop{
+            padding: 15px 200px;
+            text-align: right;
+        }
+        text-align: center;
+        text-decoration: none;
+        .footer_link{
+            color: white;
+            text-decoration: none;
+            @include desktop{
+                padding-left: 20px;
+            }
+            padding: 0 10px;
+
+        }
+    }
+}

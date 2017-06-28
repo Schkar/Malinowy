@@ -1,0 +1,93 @@
+.newsletter_container{
+    @include phone{
+        width: 70%;
+    }
+    margin: 0 auto;
+    .newsletter_header{
+        font-size: 0.8em;
+        @include phone{
+            font-size: 1em;
+        }
+    }
+    .newsletter_form{
+        .email_form{
+            display: block;
+            min-height: 200px;
+            .signup_form{
+                margin-bottom: 10px;
+                .email_input{
+                    width: 80%;
+                    height: 30px;
+                    border: 1px solid black;
+                    font-size: 0.8em;
+                    @include phone{
+                        font-size: 1em;
+                        margin-bottom: 0;
+                    }
+                }
+                .submit_button{
+                    border: 0;
+                    border-radius: 5px;
+                    color: white;
+                    text-transform: uppercase;
+                    background-color: #e50a34;
+                    padding: 10px 30px;
+                }
+                .incorrect_email{
+                    display: none;
+                    color: red;
+                    font-weight: bold;
+                    //position: absolute;
+                }
+            }
+            .captcha_container{
+                text-align: center;
+                margin-top: 40px;
+                @include phone{
+                    padding-left: 7%;
+                }
+                img:hover+.fakeCaptchaText{
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
+                .fakeCaptchaText{
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    color: red;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                }
+            }
+        }
+        .checkboxes_form{
+            display: block;
+            margin-top: 40px;
+            label{
+                display: block;
+                margin: 10px 0;
+                min-height: 20px;
+                min-width: 20px;
+                position: relative;
+                overflow: hidden;
+                .newsletter_checkboxes{
+                    display: block;
+                    position: relative;
+                    float: left;
+                    width: 16px;
+                    height: 16px;
+                    @include phone{
+                        margin: 0 5px 0 0;
+                    }
+                    margin: 0 5px 0 10px;
+                    
+                }
+                .input_text{
+                    overflow: hidden;
+                    padding-left: 10px;
+                    float: left;
+                    width: 90%;
+                }
+            }
+        } 
+    }
+}
