@@ -1,4 +1,4 @@
 # Malinowy
 Odtworzenie strony z .psd <br>
-Jeszcze niekompletne <br>
+Projekt zakończony <br>
 https://schkar.github.io/Malinowy/
